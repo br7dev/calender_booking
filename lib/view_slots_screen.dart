@@ -28,7 +28,7 @@ class _ViewSlotsScreenState extends State<ViewSlotsScreen> {
           child: widget.isHoliday
               ? Center(
                   child: Text(
-                    'Hey!! I am on a break today.\nPlease choose any other day.',
+                    'Hey!! I am on a break today.\nPlease choose another day.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Colors.red,

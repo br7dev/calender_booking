@@ -34,7 +34,6 @@ class _FormBottomSheetState extends State<FormBottomSheet> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("Hello World2");
         FocusScope.of(context).unfocus();
       },
       child: Container(
@@ -165,17 +164,12 @@ class _FormBottomSheetState extends State<FormBottomSheet> {
                 ],
               ),
             ),
-
             SizedBox(
               height: 40,
             ),
             SizedBox(
               height: 10,
             ),
-            // Column(
-            //   children:
-            //       selectedSlotsList.map((item) => new Text(item.slot)).toList(),
-            // ),
           ],
         ),
       ),
