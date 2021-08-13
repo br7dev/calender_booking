@@ -63,10 +63,10 @@ class _FormBottomSheetState extends State<FormBottomSheet> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 30.0, vertical: 10),
                     child: TextFormField(
-                      textCapitalization: TextCapitalization.sentences,
+                      textCapitalization: TextCapitalization.words,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       onChanged: (a) {
-                        name = a;
+                        name = a.capitalize();
                       },
                       validator: (v) {
                         if (v!.isValidName) {
