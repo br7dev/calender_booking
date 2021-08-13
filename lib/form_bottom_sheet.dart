@@ -1,8 +1,6 @@
 import 'package:calender_booking/success_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import 'calendar_screen.dart';
 import 'models.dart';
 
 class FormBottomSheet extends StatefulWidget {
@@ -24,7 +22,6 @@ class _FormBottomSheetState extends State<FormBottomSheet> {
   late String comments;
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  final _textController = TextEditingController();
   @override
   void dispose() {
     super.dispose();
@@ -66,7 +63,7 @@ class _FormBottomSheetState extends State<FormBottomSheet> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 30.0, vertical: 10),
                     child: TextFormField(
-                      textCapitalization: TextCapitalization.characters,
+                      textCapitalization: TextCapitalization.sentences,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       onChanged: (a) {
                         name = a;
@@ -203,8 +200,13 @@ extension extString on String {
   }
 
   bool get isValidName {
-    final nameRegExp =
-        new RegExp(r"^\s*([A-Za-z]{1,}([\.,] |[-']| ))+[A-Za-z]+\.?\s*$");
+    final nameRegExp = new RegExp(r"^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$");
     return nameRegExp.hasMatch(this);
+  }
+}
+
+extension StringExtension on String {
+  String capitalize() {
+    return "${this[0].toUpperCase()}${this.substring(1)}";
   }
 }

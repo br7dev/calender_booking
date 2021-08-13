@@ -5,6 +5,7 @@ final kFirstDay = DateTime(kToday.year, kToday.month, kToday.day);
 final kLastDay = DateTime(kToday.year, kToday.month + 3, kToday.day);
 
 Map map = Map<DateTime, List<String>>();
+
 List<Item> timeSlots = [
   Item("9 AM"),
   Item("10 AM"),
